@@ -47,7 +47,7 @@ This project consists of multiple modules that work together to fetch, process, 
 This project was developed as part of the **Automated Systems Workshop**, hosted by:
 
 - **Ahmed Yasser & Syed Fawaz**  
-- Special thanks to **Nadine (President), Jana (Vice President), and Miss Jalila (Club Head).**
+- Special thanks to **Nadine (President), Jana (Vice President), Ammar Bizoui (Event Manager), and Miss Jalila (Club Head).**
 
 ---
 
