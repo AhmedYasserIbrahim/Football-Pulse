@@ -1,0 +1,1186 @@
+{
+    "name": "Football Pulse",
+    "flow": [
+        {
+            "id": 1,
+            "module": "scrapingbee:takeScreenshot",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 5182998
+            },
+            "mapper": {
+                "url": "https://www.livescore.com/en/news/",
+                "device": "mobile",
+                "screenshot_full_page": true,
+                "window_height": "1080",
+                "window_width": "1920",
+                "optParam": {
+                    "block_ads": false,
+                    "block_resources": true,
+                    "custom_google": false,
+                    "forward_headers_pure": false,
+                    "js_scroll": false,
+                    "js_scroll_count": "1",
+                    "js_scroll_wait": "1000",
+                    "premium_proxy": false,
+                    "return_page_source": false,
+                    "stealth_proxy": false,
+                    "timeout": "140000",
+                    "transparent_status_code": false
+                }
+            },
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My ScrapingBee connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "scrapingbee"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "device": {
+                            "mode": "chose",
+                            "label": "Mobile"
+                        },
+                        "screenshot_full_page": {
+                            "mode": "chose"
+                        },
+                        "headers": {
+                            "mode": "chose"
+                        },
+                        "optParam": {
+                            "nested": {
+                                "block_ads": {
+                                    "mode": "chose"
+                                },
+                                "block_resources": {
+                                    "mode": "chose"
+                                },
+                                "custom_google": {
+                                    "mode": "chose"
+                                },
+                                "forward_headers_pure": {
+                                    "mode": "chose"
+                                },
+                                "js_scroll": {
+                                    "mode": "chose"
+                                },
+                                "premium_proxy": {
+                                    "mode": "chose"
+                                },
+                                "return_page_source": {
+                                    "mode": "chose"
+                                },
+                                "stealth_proxy": {
+                                    "mode": "chose"
+                                },
+                                "transparent_status_code": {
+                                    "mode": "chose"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:scrapingbee",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "url",
+                        "type": "url",
+                        "label": "URL",
+                        "required": true
+                    },
+                    {
+                        "name": "device",
+                        "type": "select",
+                        "label": "Device",
+                        "validate": {
+                            "enum": [
+                                "desktop",
+                                "mobile"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "screenshot_full_page",
+                        "type": "boolean",
+                        "label": "Screenshot Full Page"
+                    },
+                    {
+                        "name": "screenshot_selector",
+                        "type": "text",
+                        "label": "Screenshot Selector"
+                    },
+                    {
+                        "name": "window_height",
+                        "type": "number",
+                        "label": "Window Height"
+                    },
+                    {
+                        "name": "window_width",
+                        "type": "number",
+                        "label": "Window Width"
+                    },
+                    {
+                        "name": "headers",
+                        "type": "array",
+                        "label": "Headers",
+                        "spec": [
+                            {
+                                "name": "key",
+                                "type": "text",
+                                "label": "Key"
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "optParam",
+                        "type": "collection",
+                        "label": "Optional parameters",
+                        "spec": [
+                            {
+                                "name": "block_ads",
+                                "type": "boolean",
+                                "label": "Block Ads"
+                            },
+                            {
+                                "name": "block_resources",
+                                "type": "boolean",
+                                "label": "Block Resources"
+                            },
+                            {
+                                "name": "cookies",
+                                "type": "text",
+                                "label": "Cookies"
+                            },
+                            {
+                                "name": "country_code",
+                                "type": "text",
+                                "label": "Country Code"
+                            },
+                            {
+                                "name": "custom_google",
+                                "type": "boolean",
+                                "label": "Custom Google"
+                            },
+                            {
+                                "name": "forward_headers_pure",
+                                "type": "boolean",
+                                "label": "Forward Headers Pure"
+                            },
+                            {
+                                "name": "js_scenario",
+                                "type": "text",
+                                "label": "JS Scenario (JSON)"
+                            },
+                            {
+                                "name": "js_scroll",
+                                "type": "boolean",
+                                "label": "JS Scroll"
+                            },
+                            {
+                                "name": "js_scroll_count",
+                                "type": "number",
+                                "label": "JS Scroll Count"
+                            },
+                            {
+                                "name": "js_scroll_wait",
+                                "type": "number",
+                                "label": "JS Scroll Wait"
+                            },
+                            {
+                                "name": "js_snippet",
+                                "type": "text",
+                                "label": "JS Snippet"
+                            },
+                            {
+                                "name": "own_proxy",
+                                "type": "text",
+                                "label": "Own proxy"
+                            },
+                            {
+                                "name": "premium_proxy",
+                                "type": "boolean",
+                                "label": "Premium Proxy"
+                            },
+                            {
+                                "name": "return_page_source",
+                                "type": "boolean",
+                                "label": "Return Page Source"
+                            },
+                            {
+                                "name": "session_id",
+                                "type": "number",
+                                "label": "Session"
+                            },
+                            {
+                                "name": "stealth_proxy",
+                                "type": "boolean",
+                                "label": "Stealth Proxy (beta)"
+                            },
+                            {
+                                "name": "timeout",
+                                "type": "number",
+                                "label": "Timeout in milliseconds"
+                            },
+                            {
+                                "name": "transparent_status_code",
+                                "type": "boolean",
+                                "label": "Transparent Status Code"
+                            },
+                            {
+                                "name": "wait",
+                                "type": "number",
+                                "label": "Wait"
+                            },
+                            {
+                                "name": "wait_for",
+                                "type": "text",
+                                "label": "Wait For"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "edenai:ocr",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 5183148
+            },
+            "mapper": {
+                "fileName": "screenshot.png",
+                "data": "{{1.screenshot}}",
+                "response_as_dict": false,
+                "providers": [
+                    "amazon",
+                    "google"
+                ],
+                "language": "en"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "New connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "edenai"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "response_as_dict": {
+                            "mode": "chose"
+                        },
+                        "providers": {
+                            "mode": "chose"
+                        },
+                        "fallback_providers": {
+                            "mode": "chose",
+                            "label": "Empty"
+                        },
+                        "language": {
+                            "mode": "chose",
+                            "label": "English"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:edenai",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "fileName",
+                        "type": "filename",
+                        "label": "File name"
+                    },
+                    {
+                        "name": "data",
+                        "type": "buffer",
+                        "label": "Data"
+                    },
+                    {
+                        "name": "response_as_dict",
+                        "type": "boolean",
+                        "label": "Response as Dict",
+                        "required": true
+                    },
+                    {
+                        "name": "providers",
+                        "type": "select",
+                        "label": "Providers",
+                        "required": true,
+                        "multiple": true,
+                        "validate": {
+                            "enum": [
+                                "amazon",
+                                "clarifai",
+                                "google",
+                                "microsoft",
+                                "sentisight",
+                                "api4ai"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "fallback_providers",
+                        "type": "select",
+                        "label": "Fallback providers",
+                        "validate": {
+                            "enum": [
+                                "amazon",
+                                "clarifai",
+                                "google",
+                                "microsoft",
+                                "sentisight",
+                                "api4ai"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "type": "select",
+                        "label": "Language",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "auto-detect",
+                                "abq",
+                                "ady",
+                                "af",
+                                "sq",
+                                "anp",
+                                "ar",
+                                "as",
+                                "ast",
+                                "av",
+                                "awa",
+                                "az",
+                                "bfy",
+                                "eu",
+                                "be",
+                                "bn",
+                                "bho",
+                                "bh",
+                                "bi",
+                                "brx",
+                                "bs",
+                                "bra",
+                                "br",
+                                "bg",
+                                "bns",
+                                "bua",
+                                "rab",
+                                "ca",
+                                "ceb",
+                                "ch",
+                                "ce",
+                                "ce",
+                                "zh",
+                                "kw",
+                                "co",
+                                "crh",
+                                "hr",
+                                "cs",
+                                "da",
+                                "dar",
+                                "prs",
+                                "dhi",
+                                "doi",
+                                "nl",
+                                "en",
+                                "myv",
+                                "et",
+                                "fo",
+                                "fj",
+                                "fil",
+                                "fi",
+                                "fr",
+                                "fur",
+                                "gag",
+                                "gl",
+                                "de",
+                                "gil",
+                                "gom",
+                                "gon",
+                                "gvr",
+                                "ht",
+                                "hlb",
+                                "hni",
+                                "bgc",
+                                "haw",
+                                "he",
+                                "hi",
+                                "mnw",
+                                "hoc",
+                                "hu",
+                                "is",
+                                "smn",
+                                "id",
+                                "inh",
+                                "ia",
+                                "iu",
+                                "ga",
+                                "it",
+                                "ja",
+                                "jns",
+                                "jv",
+                                "quc",
+                                "kbd",
+                                "kea",
+                                "kac",
+                                "kl",
+                                "xnr",
+                                "kaa",
+                                "krc",
+                                "csb",
+                                "kk",
+                                "klr",
+                                "kha",
+                                "ky",
+                                "ko",
+                                "kfq",
+                                "kpy",
+                                "kos",
+                                "kmj",
+                                "kum",
+                                "ku",
+                                "kru",
+                                "ksh",
+                                "lbe",
+                                "lkt",
+                                "la",
+                                "lv",
+                                "lez",
+                                "lt",
+                                "dsb",
+                                "smj",
+                                "lb",
+                                "ms",
+                                "bfz",
+                                "mai",
+                                "ms",
+                                "mt",
+                                "gv",
+                                "mi",
+                                "mr",
+                                "mh",
+                                "el",
+                                "mn",
+                                "nap",
+                                "ne",
+                                "new",
+                                "niu",
+                                "nog",
+                                "se",
+                                "no",
+                                "nb",
+                                "oc",
+                                "ang",
+                                "os",
+                                "pi",
+                                "pa",
+                                "fa",
+                                "pl",
+                                "pt",
+                                "ps",
+                                "ro",
+                                "rm",
+                                "ru",
+                                "sck",
+                                "sm",
+                                "sa",
+                                "sat",
+                                "sco",
+                                "gd",
+                                "sr",
+                                "xsr",
+                                "srx",
+                                "sms",
+                                "sk",
+                                "sl",
+                                "so",
+                                "sma",
+                                "es",
+                                "sw",
+                                "sv",
+                                "tab",
+                                "tl",
+                                "tg",
+                                "tt",
+                                "tet",
+                                "th",
+                                "thf",
+                                "to",
+                                "tr",
+                                "tk",
+                                "tyv",
+                                "ug",
+                                "uk",
+                                "hsb",
+                                "ur",
+                                "uz",
+                                "vi",
+                                "vo",
+                                "wae",
+                                "cy",
+                                "fy",
+                                "yua",
+                                "za",
+                                "zu",
+                                "ar-XA",
+                                "be-Cyrl",
+                                "be-Latn",
+                                "zh-CN",
+                                "zh-Hans",
+                                "zh-TW",
+                                "zh-Hant",
+                                "da-DK",
+                                "nl-NL",
+                                "en-US",
+                                "fi-FI",
+                                "fr-FR",
+                                "de-DE",
+                                "hu-HU",
+                                "it-IT",
+                                "ja-JP",
+                                "kaa-Cyrl",
+                                "kk-Latn",
+                                "ko-KR",
+                                "ku-Arab",
+                                "ku-Latn",
+                                "pl-PL",
+                                "pt-BR",
+                                "pt-PT",
+                                "cz-CZ",
+                                "gr-GR",
+                                "ru-RU",
+                                "sr-RS",
+                                "sr-RS",
+                                "sr-RS",
+                                "sr-RS",
+                                "sr-RS",
+                                "es-LA",
+                                "es-ES",
+                                "sv-SE",
+                                "tr-TR",
+                                "uk-UA",
+                                "uz-Cyrl"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "fileName",
+                        "type": "filename",
+                        "label": "File name"
+                    },
+                    {
+                        "name": "data",
+                        "type": "buffer",
+                        "label": "Data"
+                    },
+                    {
+                        "name": "response_as_dict",
+                        "type": "boolean",
+                        "label": "Response as Dict",
+                        "required": true
+                    },
+                    {
+                        "name": "providers",
+                        "type": "select",
+                        "label": "Providers",
+                        "required": true,
+                        "multiple": true,
+                        "validate": {
+                            "enum": [
+                                "amazon",
+                                "clarifai",
+                                "google",
+                                "microsoft",
+                                "sentisight",
+                                "api4ai"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "fallback_providers",
+                        "type": "select",
+                        "label": "Fallback providers",
+                        "validate": {
+                            "enum": [
+                                "amazon",
+                                "clarifai",
+                                "google",
+                                "microsoft",
+                                "sentisight",
+                                "api4ai"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "type": "select",
+                        "label": "Language",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "auto-detect",
+                                "abq",
+                                "ady",
+                                "af",
+                                "sq",
+                                "anp",
+                                "ar",
+                                "as",
+                                "ast",
+                                "av",
+                                "awa",
+                                "az",
+                                "bfy",
+                                "eu",
+                                "be",
+                                "bn",
+                                "bho",
+                                "bh",
+                                "bi",
+                                "brx",
+                                "bs",
+                                "bra",
+                                "br",
+                                "bg",
+                                "bns",
+                                "bua",
+                                "rab",
+                                "ca",
+                                "ceb",
+                                "ch",
+                                "ce",
+                                "ce",
+                                "zh",
+                                "kw",
+                                "co",
+                                "crh",
+                                "hr",
+                                "cs",
+                                "da",
+                                "dar",
+                                "prs",
+                                "dhi",
+                                "doi",
+                                "nl",
+                                "en",
+                                "myv",
+                                "et",
+                                "fo",
+                                "fj",
+                                "fil",
+                                "fi",
+                                "fr",
+                                "fur",
+                                "gag",
+                                "gl",
+                                "de",
+                                "gil",
+                                "gom",
+                                "gon",
+                                "gvr",
+                                "ht",
+                                "hlb",
+                                "hni",
+                                "bgc",
+                                "haw",
+                                "he",
+                                "hi",
+                                "mnw",
+                                "hoc",
+                                "hu",
+                                "is",
+                                "smn",
+                                "id",
+                                "inh",
+                                "ia",
+                                "iu",
+                                "ga",
+                                "it",
+                                "ja",
+                                "jns",
+                                "jv",
+                                "quc",
+                                "kbd",
+                                "kea",
+                                "kac",
+                                "kl",
+                                "xnr",
+                                "kaa",
+                                "krc",
+                                "csb",
+                                "kk",
+                                "klr",
+                                "kha",
+                                "ky",
+                                "ko",
+                                "kfq",
+                                "kpy",
+                                "kos",
+                                "kmj",
+                                "kum",
+                                "ku",
+                                "kru",
+                                "ksh",
+                                "lbe",
+                                "lkt",
+                                "la",
+                                "lv",
+                                "lez",
+                                "lt",
+                                "dsb",
+                                "smj",
+                                "lb",
+                                "ms",
+                                "bfz",
+                                "mai",
+                                "ms",
+                                "mt",
+                                "gv",
+                                "mi",
+                                "mr",
+                                "mh",
+                                "el",
+                                "mn",
+                                "nap",
+                                "ne",
+                                "new",
+                                "niu",
+                                "nog",
+                                "se",
+                                "no",
+                                "nb",
+                                "oc",
+                                "ang",
+                                "os",
+                                "pi",
+                                "pa",
+                                "fa",
+                                "pl",
+                                "pt",
+                                "ps",
+                                "ro",
+                                "rm",
+                                "ru",
+                                "sck",
+                                "sm",
+                                "sa",
+                                "sat",
+                                "sco",
+                                "gd",
+                                "sr",
+                                "xsr",
+                                "srx",
+                                "sms",
+                                "sk",
+                                "sl",
+                                "so",
+                                "sma",
+                                "es",
+                                "sw",
+                                "sv",
+                                "tab",
+                                "tl",
+                                "tg",
+                                "tt",
+                                "tet",
+                                "th",
+                                "thf",
+                                "to",
+                                "tr",
+                                "tk",
+                                "tyv",
+                                "ug",
+                                "uk",
+                                "hsb",
+                                "ur",
+                                "uz",
+                                "vi",
+                                "vo",
+                                "wae",
+                                "cy",
+                                "fy",
+                                "yua",
+                                "za",
+                                "zu",
+                                "ar-XA",
+                                "be-Cyrl",
+                                "be-Latn",
+                                "zh-CN",
+                                "zh-Hans",
+                                "zh-TW",
+                                "zh-Hant",
+                                "da-DK",
+                                "nl-NL",
+                                "en-US",
+                                "fi-FI",
+                                "fr-FR",
+                                "de-DE",
+                                "hu-HU",
+                                "it-IT",
+                                "ja-JP",
+                                "kaa-Cyrl",
+                                "kk-Latn",
+                                "ko-KR",
+                                "ku-Arab",
+                                "ku-Latn",
+                                "pl-PL",
+                                "pt-BR",
+                                "pt-PT",
+                                "cz-CZ",
+                                "gr-GR",
+                                "ru-RU",
+                                "sr-RS",
+                                "sr-RS",
+                                "sr-RS",
+                                "sr-RS",
+                                "sr-RS",
+                                "es-LA",
+                                "es-ES",
+                                "sv-SE",
+                                "tr-TR",
+                                "uk-UA",
+                                "uz-Cyrl"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "edenai:textgeneration",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 5183148
+            },
+            "mapper": {
+                "text": "Write an interesting tweet about {{2.result[].text}}",
+                "response_as_dict": false,
+                "max_tokens": "250",
+                "providers": [
+                    "google",
+                    "openai",
+                    "anthropic"
+                ]
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "New connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "edenai"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "response_as_dict": {
+                            "mode": "chose"
+                        },
+                        "providers": {
+                            "mode": "chose"
+                        },
+                        "fallback_providers": {
+                            "mode": "chose",
+                            "label": "Empty"
+                        },
+                        "settings": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:edenai",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "text",
+                        "type": "text",
+                        "label": "Text",
+                        "required": true
+                    },
+                    {
+                        "name": "response_as_dict",
+                        "type": "boolean",
+                        "label": "Response as Dict",
+                        "required": true
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature"
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "integer",
+                        "label": "Max tokens"
+                    },
+                    {
+                        "name": "providers",
+                        "type": "select",
+                        "label": "Providers",
+                        "required": true,
+                        "multiple": true,
+                        "validate": {
+                            "enum": [
+                                "cohere",
+                                "google",
+                                "openai",
+                                "anthropic",
+                                "ai21labs",
+                                "mistral",
+                                "amazon",
+                                "meta"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "fallback_providers",
+                        "type": "select",
+                        "label": "Fallback providers",
+                        "validate": {
+                            "enum": [
+                                "cohere",
+                                "google",
+                                "openai",
+                                "anthropic",
+                                "ai21labs",
+                                "mistral",
+                                "amazon",
+                                "meta"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "settings",
+                        "type": "array",
+                        "label": "Settings",
+                        "spec": [
+                            {
+                                "name": "provider",
+                                "type": "select",
+                                "label": "Provider",
+                                "options": [
+                                    {
+                                        "label": "Cohere",
+                                        "value": "cohere"
+                                    },
+                                    {
+                                        "label": "OpenAI",
+                                        "value": "openai"
+                                    },
+                                    {
+                                        "label": "Anthropic",
+                                        "value": "anthropic"
+                                    },
+                                    {
+                                        "label": "Mistral",
+                                        "value": "mistral"
+                                    },
+                                    {
+                                        "label": "Google",
+                                        "value": "google"
+                                    },
+                                    {
+                                        "label": "AI21Labs",
+                                        "value": "ai21labs"
+                                    },
+                                    {
+                                        "label": "Amazon",
+                                        "value": "amazon"
+                                    },
+                                    {
+                                        "label": "Meta",
+                                        "value": "meta"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "model",
+                                "type": "select",
+                                "label": "Model",
+                                "options": [
+                                    {
+                                        "label": "openai: text-davinci-003",
+                                        "value": "text-davinci-003"
+                                    },
+                                    {
+                                        "label": "openai: text-davinci-002",
+                                        "value": "text-davinci-002"
+                                    },
+                                    {
+                                        "label": "openai: text-curie-001",
+                                        "value": "text-curie-001"
+                                    },
+                                    {
+                                        "label": "openai: text-babbage-001",
+                                        "value": "text-babbage-001"
+                                    },
+                                    {
+                                        "label": "openai: text-ada-001",
+                                        "value": "text-ada-001"
+                                    },
+                                    {
+                                        "label": "openai: gpt-3.5-turbo-instruct",
+                                        "value": "gpt-3.5-turbo-instruct"
+                                    },
+                                    {
+                                        "label": "cohere: base",
+                                        "value": "base"
+                                    },
+                                    {
+                                        "label": "cohere: base-light",
+                                        "value": "base-light"
+                                    },
+                                    {
+                                        "label": "cohere: command",
+                                        "value": "command"
+                                    },
+                                    {
+                                        "label": "cohere: command-light",
+                                        "value": "command-light"
+                                    },
+                                    {
+                                        "label": "cohere: command-light-nightly",
+                                        "value": "command-light-nightly"
+                                    },
+                                    {
+                                        "label": "cohere: command-nightly",
+                                        "value": "command-nightly"
+                                    },
+                                    {
+                                        "label": "ai21labs: j2-grande-instruct",
+                                        "value": "j2-grande-instruct"
+                                    },
+                                    {
+                                        "label": "ai21labs: j2-jumbo-instruct",
+                                        "value": "j2-jumbo-instruct"
+                                    },
+                                    {
+                                        "label": "ai21labs: j2-mid",
+                                        "value": "j2-mid"
+                                    },
+                                    {
+                                        "label": "ai21labs: j2-ultra",
+                                        "value": "j2-ultra"
+                                    },
+                                    {
+                                        "label": "anthropic: claude-v2",
+                                        "value": "claude-v2"
+                                    },
+                                    {
+                                        "label": "anthropic: claude-v1",
+                                        "value": "claude-v1"
+                                    },
+                                    {
+                                        "label": "anthropic: claude-instant-v1",
+                                        "value": "claude-instant-v1"
+                                    },
+                                    {
+                                        "label": "mistral: mistral-7B-Instruct",
+                                        "value": "mistral-7B-Instruct"
+                                    },
+                                    {
+                                        "label": "mistral: mistral-7B-OpenOrca",
+                                        "value": "mistral-7B-OpenOrca"
+                                    },
+                                    {
+                                        "label": "mistral: openHermes-2-mistral-7B",
+                                        "value": "openHermes-2-mistral-7B"
+                                    },
+                                    {
+                                        "label": "amazon: titan-text-express-v1",
+                                        "value": "titan-text-express-v1"
+                                    },
+                                    {
+                                        "label": "amazon: titan-text-lite-v1",
+                                        "value": "titan-text-lite-v1"
+                                    },
+                                    {
+                                        "label": "amazon: titan-tg1-large",
+                                        "value": "titan-tg1-large"
+                                    },
+                                    {
+                                        "label": "meta: llama2-13b-chat-v1",
+                                        "value": "llama2-13b-chat-v1"
+                                    },
+                                    {
+                                        "label": "meta: llama2-70b-chat-v1",
+                                        "value": "llama2-70b-chat-v1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com",
+        "notes": []
+    }
+}
